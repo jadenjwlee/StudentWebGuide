@@ -6,14 +6,14 @@
 
 		<div id="passport">
 			<h2 id="con_h2">Passport to success</h2>
-			<a id="aa" href="#"><img id="img" src="Res/passport.jpg"></a>
+			<a id="aa" href="#"><img id="img" src="../../image/passport.jpg"></a>
 			<p id="con_p">Your Passport to Success is a program designed to help full-time international students make friends, develop important learning skills and acquire knowledge beneficial to future employment opportunities.</p>	
 		</div>
 		<!--end passport-->
 
 		<div id="program">
 			<h2 id="con_h2">Connect Buddy Program</h2>
-			<a id="aa" href="#"><img id="img" src="Res/connected.jpg"></a>
+			<a id="aa" href="#"><img id="img" src="../../image/connected.jpg"></a>
 			<p id="con_p">Adjusting to a new living environment can be both exciting and challenging. The Connect Buddy program provides a support team for new international students to connect with a returning student (your Senior Student Buddy) and a faculty, staff or admin person (your Faculty/Staff Buddy).</p>	
 		</div>
 		<!--end program-->
