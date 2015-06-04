@@ -367,3 +367,79 @@ footer{
 	height: 50px;
 
 }
+
+/*--------------------------------------------International Center begin here----------------------------------------------*/
+
+#international{
+	padding-right: 100px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#inter_h1{
+	margin-left: 100px;
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size: 36px;
+	color: white;
+	background-color: red;
+	padding: 10px 10px 10px 10px;
+	width: 561px;	
+}
+
+#inter_p{
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	margin-bottom: 30px;
+	line-height: 25px;
+	font-size: 20px;
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	padding-left: 15px;
+	background-color: #FFD600;
+	margin-left: 100px;
+}
+
+#passport{
+	float: left;
+	width: 45%;
+	margin-left: 100px;
+	margin-bottom: 100px;
+}
+
+#program{
+	float: right;
+	width: 45%;
+	margin-bottom: 100px;
+}
+
+#con_h2{
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+	font-size: 20px; 	
+}
+
+#con_p{
+	margin-top: 8px;
+	color: #7f7f7f;
+    margin-bottom: 10px;
+    font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+    line-height: 18px;
+}
+
+#img{
+	margin-top: 20px;
+    background: #fff;
+	border: solid 1px #ccc;
+	padding: 2px;
+    border-radius: 20px;
+    width: 450px;
+    height: 300px;
+}
+
+#aa:hover #img{
+	box-shadow: 0px 10px 14px rgba(0,0,0,0.2);
+}
+
+#appointment{
+	margin-top: 100px;
+	margin-left: 100px;
+}
