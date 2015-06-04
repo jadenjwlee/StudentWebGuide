@@ -6,7 +6,7 @@
 #Referenced on April 22, 2015 by Jeesoo Kim
 include '../../Public/Home/header.php'; ?>  
 
-Thanks! Bye now!
+<h2 id="con_h2">Thanks! Bye now!</h2>
 
 
 

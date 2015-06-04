@@ -19,9 +19,9 @@
 		<!--end program-->
 
 		<div id="appointment">
-			<h2>Make an appointment</h2>
-			<p>Question? Make an appointment at International center and we will help you to deal with it.</p>
-			<button>Make appointment</button>	
+			<h2 id="con_h2">Make an appointment</h2>
+			<p id="con_p">Question? Make an appointment at International center and we will help you to deal with it.</p>
+			<button id="con_button">Make appointment</button>	
 		</div>
 		<!--end appointment-->
 	</section>

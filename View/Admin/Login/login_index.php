@@ -20,7 +20,7 @@ if (isset($_SESSION['login_user'])) {
 <?php include '../../Public/Home/header.php'; ?>  
 
 
-<h2><span class="fontawesome-lock"></span>User Login</h2>
+
 
 
 <div id="error" >
@@ -35,36 +35,35 @@ if (isset($_SESSION['login_user'])) {
 </div>
 
 <div id="login">
-
+    
+    <h2><span class="fontawesome-lock"></span>User Login</h2>
+    
     <form action="" method="Post">
         <fieldset name="Log_in">      
 
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" autofocus="autofocus" placeholder="username" onBlur="if (this.value == '')
-                        this.value = 'username'" onFocus="if (this.value == 'username')
-                                    this.value = ''"/>
-            <br/>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="********" onBlur="if (this.value == '')
-                        this.value = 'password'" onFocus="if (this.value == 'password')
-                                    this.value = ''"/>
-            <br/>
+            <p><label for="username">UserName</label></p>
+                <p><input type="username" id="username" value="username" onBlur="if(this.value=='')this.value='username'" onFocus="if(this.value=='username')
+                    this.value=''"></p> 
+
+                <p><label for="password">Password</label></p>
+                <p><input type="password" id="password" value="password" onBlur="if(this.value=='')this.value='password'" onFocus="if(this.value=='password')
+                    this.value=''"></p>
         </fieldset>
 
         <!-- Start: Image Authentication (1) -->
         <fieldset name="Image_Auth_with_random_number">                  
-            <!--            <legend>Image Authentication with 5 digit Random number</legend>-->
-            <label>Please enter the number in yellow on black beside: </label>
-            <input type="text" id="imgNumber" name="imgNumber" value=""/>
-            &nbsp;&nbsp;<img src="randomImage.php"/>                  
+            <!--<legend>Image Authentication with 5 digit Random number</legend>-->
+            <p><label>Please enter the number in yellow on black beside: </label></p>
+            <p><input type="text" id="imgNumber" name="imgNumber" value=""/></p>
+            <p><img src="randomImage.php"/></p>                  
             <!-- End: Image Authentication -->
 
-            <br/>
-            <input type="submit" name="submit" value="Login" />
+            <p><input type="submit" name="submit" value="Login" /></p>
         </fieldset>
         <span><?php echo $error; ?></span>                   
     </form>        
-</div><!-- end of $login--> 
+</div>
+<!-- end of $login--> 
 
 
 <?php include '../../Public/Home/footer.php'; ?>  
