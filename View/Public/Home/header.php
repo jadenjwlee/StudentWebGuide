@@ -28,7 +28,7 @@
                 <ul>
                     <li class="active"><a href="../../Public/Home/home.php"><span>Home</span></a></li>
                     <li class="has sub"><a href="#"><span>Road map tour</span></a></li>
-                    <li class="has sub"><a href="#"><span>International Center</span></a></li>
+                    <li class="has sub"><a href="../International Center/International_center.html"><span>International Center</span></a></li>
                     <li><a href="../touristSpots/index.php"><span>Tourism</span></a></li>
                     <li><a href="#"><span>Off-campus Job</span></a></li>
                     <li><a href="../../Public/Housing/housing.php"><span>Off-campus Housing</span></a></li>
