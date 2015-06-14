@@ -1,193 +1,96 @@
 <?php
-class ToprecipeDB {
-	//use category and jobapplicants class
-	//four static method
-    public static function getRecipeCategory() {
-        $db = Database::getDB();
-        $query = 'select cat_id, cat_name from categories';
-        $result = $db->query($query);
-        $categories = array();
-        foreach ($result as $row) {
-            $category = new Category( $row['cat_id'], $row['cat_name']);
-            
-            $categories[] = $category;
-        }
-        return $categories;
-    }
+class HouseDB {
 
-    public static function getTotCount( $filter ) { 
+    public static function getHousing($condition) {
         $db = Database::getDB();
         
-        $query = "select COUNT(*) from ( "
-                 ."select  votes cnt, dish_id,"
-		 ."dish_name, (select cat_name from categories where cat_id = a.dish_cat) dish_cat,"
-                 ."dish_key, dish_num_serving, dish_cook_time "
-                 .",(select display_yes_no from top_recipes where dish_id = a.dish_id ) disp_yn "
-                 ."from recipes a ";
- 
-        if( $filter != "" ){
-            $query .= "where dish_cat = '$filter' order by cnt desc ";
+        if( $condition != "" ){
+            $query = "SELECT * FROM housing where DATE_FORMAT(occupancy_date, '%m/%d/%Y') = '$condition' ";
+        }else{
+            $query = "SELECT * FROM housing";
         }
-
-        $query .= ") b "
-               ."where ( b.disp_yn is null or b.disp_yn = '' or b.disp_yn = 'Y') order by cnt desc";
-
-        $count = $db->query($query);
-        //convert result into array
-        $row = $count->fetch();
-        $result = $row[0];
-
-        return $result;
-    } 
-
-    public static function getPageTopRecipeByCategory($category, $cntPerPage, $pgPage) {
-
-        $offset = ($pgPage - 1) * $cntPerPage; 
         
-        $db = Database::getDB();
-        $query = "select * from ( "
-                 ."select  votes cnt, dish_id,"
-		 ."dish_name, (select cat_name from categories where cat_id = a.dish_cat) dish_cat,"
-                 ."dish_key, dish_num_serving, dish_cook_time "
-                 .",(select display_yes_no from top_recipes where dish_id = a.dish_id ) disp_yn "
-                 ."from recipes a ";
-
-        if( $category != "" ){
-            $query .= "where dish_cat = '$category' order by cnt desc ";
-        }
-
-        $query .= ") b "
-               ."where ( b.disp_yn is null or b.disp_yn = '' or b.disp_yn = 'Y') order by cnt desc";
-
-        $query .= " LIMIT ".$cntPerPage." OFFSET ".$offset;
-
         $result = $db->query($query);
-        $toprecipes = array();
+        $vinesports = array();
+
         foreach ($result as $row) {
-            $toprecipe = new Toprecipe(
-                                   $row['cnt'],
-                                   $row['dish_id'],
-                                   $row['dish_name'],
-                                   $row['dish_cat'],
-                                   $row['dish_key'],
-                                   $row['dish_num_serving'],
-                                   $row['dish_cook_time']
+            $vinesport = new House(
+                                   $row['id'],
+                                   $row['title'],
+                                   $row['address'],
+                                   $row['name'],
+                                   $row['tel'],
+                                   $row['email'],
+                                   $row['googlemap'],
+                                   $row['occupancy_date'],
+                                   $row['status'],
+                                   $row['img'],
+                                   $row['description']
                     );
-            $toprecipes[] = $toprecipe;
+            $vinesports[] = $vinesport;
         }
-        return $toprecipes;
+        return $vinesports;
     }
-
-    public static function getTotCountByAdmin( $filter ) { 
+    
+    public static function deleteHouse($id) {
         $db = Database::getDB();
-        
-        $query = "select COUNT(*) from ( "
-                 ."select  votes cnt, dish_id,"
-		 ."dish_name, (select cat_name from categories where cat_id = a.dish_cat) dish_cat,"
-                 ."dish_key, dish_num_serving, dish_cook_time "
-                 .",(select display_yes_no from top_recipes where dish_id = a.dish_id ) disp_yn "
-                 ."from recipes a ";
- 
-        if( $filter != "" ){
-            $query .= "where dish_cat = '$filter' order by cnt desc ";
-        }
-
-        $query .= ") b "
-               ." order by cnt desc";
-
-        $count = $db->query($query);
-        //convert result into array
-        $row = $count->fetch();
-        $result = $row[0];
-
-        return $result;
-    } 
-
-    public static function getPageTopRecipeByCategoryByAdmin($category, $cntPerPage, $pgPage) {
-
-        $offset = ($pgPage - 1) * $cntPerPage; 
-        
-        $db = Database::getDB();
-        $query = "select * from ( "
-                 ."select  votes cnt, dish_id,"
-		 ."dish_name, (select cat_name from categories where cat_id = a.dish_cat) dish_cat,"
-                 ."dish_key, dish_num_serving, dish_cook_time "
-                 .",(select display_yes_no from top_recipes where dish_id = a.dish_id ) disp_yn "
-                 ."from recipes a ";
- 
-        if( $category != "" ){
-            $query .= "where dish_cat = '$category' order by cnt desc ";
-        }
-
-        $query .= ") b "
-               ." order by cnt desc";
-
-        $query .= " LIMIT ".$cntPerPage." OFFSET ".$offset;
-        $result = $db->query($query);
-        $toprecipeadmins = array();
-        foreach ($result as $row) {
-            $toprecipeadmin = new Toprecipeadmin(
-                                   $row['cnt'],
-                                   $row['dish_id'],
-                                   $row['dish_name'],
-                                   $row['dish_cat'],
-                                   $row['dish_key'],
-                                   $row['dish_num_serving'],
-                                   $row['dish_cook_time'],
-                                   $row['disp_yn']
-                    );
-            $toprecipeadmins[] = $toprecipeadmin;
-        }
-        return $toprecipeadmins;
-    }
-
-    public static function getTotRecipesCount( $filter ) { 
-        $db = Database::getDB();
-        
-        $query = "select COUNT(*) from top_recipes
-                  WHERE dish_id = '$dish_id'";
-
-        $count = $db->query($query);
-        //convert result into array
-        $row = $count->fetch();
-        $result = $row[0];
-
-        return $result;
-    } 
-
-    public static function deleteTopRecipes($dish_id) {
-        $db = Database::getDB();
-        $query = "DELETE FROM top_recipes
-                  WHERE dish_id = '$dish_id'";
+        $query = "DELETE FROM housing
+                  WHERE id = '$id'";
         $row_count = $db->exec($query);
         return $row_count;
     }
 
-    public static function addTopRecipes($toprecipedisplay) {
+    public static function addHouse($house) {
         $db = Database::getDB();
 
-        $dish_id = $toprecipedisplay->getDishId();
-        $displayYn = $toprecipedisplay->getDisplyYN();
-
+        $id             = $house->getId();
+        $title          = $house->getTitle();
+        $address        = $house->getAddress();
+        $name           = $house->getName();
+        $tel            = $house->getTel();
+        $email          = $house->getEmail();
+        $googlemap      = $house->getGooglemap();
+        $occupancy_date = $house->getOccupancy_date();
+        $status         = $house->getStatus();
+        $img            = $house->getImg();
+        $description    = $house->getDescription();
+       
         $query =
-            "INSERT INTO top_recipes
-                 (dish_id, display_yes_no)
+            "INSERT INTO volunteer
+                 (title, address, name, tel, email, googlemap, occupancy_date, status, img, description)
              VALUES
-                 ('$dish_id', '$displayYn')";
+                 ('$title', '$address', '$name', '$tel', '$email', '$googlemap', '$occupancy_date', '$status', '$img', '$description' )";
 
         $row_count = $db->exec($query);
         return $row_count;
     }
 
-    public static function updateTopRecipes($toprecipedisplay) {
+    public static function updateTopRecipes($house) {
         $db = Database::getDB();
 
-        $dish_id = $toprecipedisplay->getDishId();
-        $displayYn = $toprecipedisplay->getDisplyYN();
+        $title          = $house->getTitle();
+        $address        = $house->getAddress();
+        $name           = $house->getName();
+        $tel            = $house->getTel();
+        $email          = $house->getEmail();
+        $googlemap      = $house->getGooglemap();
+        $occupancy_date = $house->getOccupancy_date();
+        $status         = $house->getStatus();
+        $img            = $house->getImg();
+        $description    = $house->getDescription();
         
         $query = "UPDATE top_recipes SET "
-                . "display_yes_no = '$displayYn' "
-                . "WHERE dish_id = '$dish_id'";
+                . ",title           = '$title' "
+                . ",address         = '$address' "
+                . ",name            = '$name' "
+                . ",tel             = '$tel' "
+                . ",email           = '$email' "
+                . ",googlemap       = '$googlemap' "
+                . ",occupancy_date  = '$occupancy_date' "
+                . ",status          = '$status' "
+                . ",img             = '$img' "
+                . ",description     = '$description' "
+                . "WHERE id         = '$id'";
         
         $row_count = $db->exec($query);
         return $row_count;

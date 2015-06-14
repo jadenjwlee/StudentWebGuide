@@ -1,183 +1,112 @@
 <?php
 
-class Toprecipe{
+class House{
     
-    private $cnt, $dish_id, $dish_name, $dish_cat, $dish_key, $dish_num_serving,$dish_cook_time;
+    private $id, $title, $address, $name, $tel, $email, $googlemap, 
+           $occupancy_date, $status, $img, $description;
     
-    public function __construct($cnt, $dish_id, $dish_name, $dish_cat, $dish_key, $dish_num_serving,$dish_cook_time){
-        $this->cnt=$cnt;
-        $this->dish_id=$dish_id;
-        $this->dish_name=$dish_name;
-        $this->dish_cat=$dish_cat;
-        $this->dish_key=$dish_key;
-        $this->dish_num_serving=$dish_num_serving;
-        $this->dish_cook_time=$dish_cook_time;
-    }
+    public function __construct($id, $title, $address, $name, $tel, $email, 
+                                $googlemap, $occupancy_date, $status, $img, 
+                                $description ){
+            $this->id            = $id;
+            $this->title         = $title;
+            $this->address       = $address;
+            $this->name          = $name;
+            $this->tel           = $tel;
+            $this->email         = $email;
+            $this->googlemap     = $googlemap;
+            $this->occupancy_date= $occupancy_date;
+            $this->status        = $status;
+            $this->img           = $img; 
+            $this->description   = $description;
+
+     }
  
-    public function getCnt(){   
-        return $this->cnt;
+    public function getId(){
+        return $this->id;
     }
     
-    public function setCnt($value){
-        $this->cnt=$value;
-    }
-    
-    public function getDishId(){
-        return $this->dish_id;
-    }
-    
-    public function setDishId($value){
-        $this->dish_id=$value;
+    public function setId($value){
+        $this->id=$value;
     }    
     
-    public function getDishName(){   
-        return $this->dish_name;
+    public function getTitle(){   
+        return $this->title;
     }
     
-    public function setDishName($value){
-        $this->dish_name=$value;
+    public function setTitle($value){
+        $this->title=$value;
     }
     
-    public function getDishCat(){
-        return $this->dish_cat;
+    public function getAddress(){
+        return $this->address;
     }
     
-    public function setDishCat($value){
-        $this->dish_cat=$value;
+    public function setAddress($value){
+        $this->address=$value;
     }    
 
-    public function getDishKey(){
-        return $this->dish_key;
+    public function getName(){
+        return $this->name;
     }
     
-    public function setDishKey($value){
-        $this->dish_key=$value;
+    public function setName($value){
+        $this->name=$value;
     }    
 
-    public function getDishNumServing(){
-        return $this->dish_num_serving;
+    public function getTel(){
+        return $this->tel;
     }
     
-    public function setDishNumServing($value){
-        $this->dish_num_serving=$value;
+    public function setTel($value){
+        $this->tel=$value;
+    }    
+    
+    public function getEmail(){
+        return $this->email;
+    }
+    
+    public function setEmail($value){
+        $this->email=$value;
     }    
 
-    public function getDishCookTime(){
-        return $this->dish_cook_time;
+    public function getGooglemap(){
+        return $this->googlemap;
     }
     
-    public function setDishCookTime($value){
-        $this->dish_cook_time=$value;
-    }    
-    
-}
-
-class TopRecipeDisplay{
-    
-    private $dish_id, $displayYN;
-    
-    public function __construct($dish_id, $displayYN){
-        $this->dish_id=$dish_id;
-        $this->displayYN=$displayYN;
-    }
- 
-    public function getDishId(){
-        return $this->dish_id;
-    }
-    
-    public function setDishId($value){
-        $this->dish_id=$value;
-    }    
-    
-    public function getDisplyYN(){   
-        return $this->displayYN;
-    }
-    
-    public function setDisplayYN($value){
-        $this->displayYN=$value;
-    }
-    
-}
-
-class Toprecipeadmin{
-    
-    private $cnt, $dish_id, $dish_name, $dish_cat, $dish_key, $dish_num_serving,$dish_cook_time,$disp_yn;
-    
-    public function __construct($cnt, $dish_id, $dish_name, $dish_cat, $dish_key, $dish_num_serving,$dish_cook_time, $disp_yn){
-        $this->cnt=$cnt;
-        $this->dish_id=$dish_id;
-        $this->dish_name=$dish_name;
-        $this->dish_cat=$dish_cat;
-        $this->dish_key=$dish_key;
-        $this->dish_num_serving=$dish_num_serving;
-        $this->dish_cook_time=$dish_cook_time;
-        $this->disp_yn=$disp_yn;
-    }
- 
-    public function getCnt(){   
-        return $this->cnt;
-    }
-    
-    public function setCnt($value){
-        $this->cnt=$value;
-    }
-    
-    public function getDishId(){
-        return $this->dish_id;
-    }
-    
-    public function setDishId($value){
-        $this->dish_id=$value;
-    }    
-    
-    public function getDishName(){   
-        return $this->dish_name;
-    }
-    
-    public function setDishName($value){
-        $this->dish_name=$value;
-    }
-    
-    public function getDishCat(){
-        return $this->dish_cat;
-    }
-    
-    public function setDishCat($value){
-        $this->dish_cat=$value;
+    public function setGooglemap($value){
+        $this->googlemap=$value;
     }    
 
-    public function getDishKey(){
-        return $this->dish_key;
+    public function getOccupancyDate(){
+        return $this->occupancy_date;
     }
     
-    public function setDishKey($value){
-        $this->dish_key=$value;
+    public function setOccupancyDate($value){
+        $this->occupancy_date=$value;
     }    
 
-    public function getDishNumServing(){
-        return $this->dish_num_serving;
+    public function getStatus(){
+        return $this->status;
     }
     
-    public function setDishNumServing($value){
-        $this->dish_num_serving=$value;
+    public function setStatus($value){
+        $this->status=$value;
     }    
 
-    public function getDishCookTime(){
-        return $this->dish_cook_time;
+    public function getImg(){
+        return $this->img;
     }
     
-    public function setDishCookTime($value){
-        $this->dish_cook_time=$value;
+    public function setImg($value){
+        $this->img=$value;
     }    
-    
-    public function getDispYn(){
-        return $this->disp_yn;
+    public function getDescription(){
+        return $this->description;
     }
     
-    public function setDispYn($value){
-        $this->disp_yn=$value;
+    public function setDescription($value){
+        $this->description=$value;
     }    
 }
-
 ?>
-
