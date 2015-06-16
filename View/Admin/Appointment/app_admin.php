@@ -1,3 +1,29 @@
+<?php 
+	
+	if(isset($_POST['action'])) {
+		$action = $_POST['action'];
+	} else{
+		//First time when page load, assgin 'list_appointment' to $action
+		$action = 'list_appointment';
+	}
+
+	if($action = 'list_appointment'){
+
+	}
+
+
+
+	//Get database connection
+	require_once('../../../Controller/DatabaseConn.php');
+	$db = Database::getDB();
+
+	//Get appointment table
+	$query = 'SELECT * FROM appointment';
+	$result = $db -> query($query);
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,8 +76,8 @@
 	<div class="container-fluid main-container">
 		<div class="col-md-2 sidebar">
 			<ul class="nav nav-pills nav-stacked">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="../Appointment/app_admin.php">Appointment</a></li>
+				<li><a href="#">Home</a></li>
+				<li class="active"><a href="../Appointment/app_admin.php">Appointment</a></li>
 				<li><a href="#">Link</a></li>
 				<li><a href="#">Link</a></li>
 				<li><a href="#">Link</a></li>
@@ -60,15 +86,36 @@
 		<div class="col-md-10 content">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Dashboard
+                    Appointment for International Center
                 </div>
                 <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    			    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                	<div class="row col-md-6 col-md-offset-2 custyle">
+    					<table id="app_table" class="table table-striped custab">
+    						<thead>
+        						<tr>
+        							<th>Student Number</th>
+            						<th>Name</th>
+            						<th>Email</th>
+            						<th>Time</th>
+            						<th>Instructors</th>
+            						<th class="text-center">Action</th>
+        						</tr>
+    						</thead>
+    							<?php foreach($result as $results) : ?>
+					            <tr>
+					            	<td><?php echo $results['id']; ?></td>
+					                <td><?php echo $results['name']; ?></td>
+					                <td><?php echo $results['email']; ?></td>
+					                <td><?php echo $results['time']; ?></td>
+					                <td><?php echo $results['instructor']; ?></td>
+					                <td class="text-center">
+					                	<a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> 
+					                	
+					                	<a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+					            </tr>
+					        	<?php endforeach; ?>
+					    </table>
+    				</div>
                 </div>
             </div>
 		</div>
