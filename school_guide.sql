@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2015 at 03:31 AM
+-- Generation Time: Jun 17, 2015 at 07:53 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -23,126 +23,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Table structure for table `housing`
 --
 
-CREATE TABLE IF NOT EXISTS `categories` (
-`cat_id` int(11) NOT NULL,
-  `cat_name` varchar(20) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `housing` (
+`id` int(11) NOT NULL,
+  `title` varchar(500) NOT NULL,
+  `address` varchar(500) DEFAULT NULL,
+  `name` varchar(500) DEFAULT NULL,
+  `tel` varchar(20) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `googlemap` varchar(500) DEFAULT NULL,
+  `occupancy_date` date DEFAULT NULL,
+  `status` varchar(1) DEFAULT NULL,
+  `img` varchar(200) DEFAULT NULL,
+  `description` varchar(2000) DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `categories`
+-- Dumping data for table `housing`
 --
 
-INSERT INTO `categories` (`cat_id`, `cat_name`) VALUES
-(1, 'BREAKFAST'),
-(2, 'LUNCH'),
-(3, 'DINNER'),
-(4, 'PASTRY'),
-(5, 'BEVERAGES');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `recipes`
---
-
-CREATE TABLE IF NOT EXISTS `recipes` (
-`dish_id` int(10) NOT NULL,
-  `dish_name` varchar(150) NOT NULL,
-  `dish_cat` int(11) NOT NULL,
-  `dish_key` varchar(100) NOT NULL,
-  `dish_num_serving` int(20) DEFAULT NULL,
-  `dish_cook_time` varchar(50) DEFAULT NULL,
-  `dish_ingredients` mediumtext NOT NULL,
-  `dish_steps` mediumtext NOT NULL,
-  `votes` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `recipes`
---
-
-INSERT INTO `recipes` (`dish_id`, `dish_name`, `dish_cat`, `dish_key`, `dish_num_serving`, `dish_cook_time`, `dish_ingredients`, `dish_steps`, `votes`) VALUES
-(2, 'Warm Brussels Sprout Salad with Hazelnuts and Cranberries', 2, 'Sprout', 6, '50mins', '1 pound Brussels sprouts, trimmed and quartered', 'Preheat oven to 425 degrees F', 4),
-(3, '1Tasty Tuna Burgers', 2, 'tuna', 4, '15mins', '1 can tuna, drained', 'Combine tuna, egg, bread crumbs, onion, celery, red bell pepper, mayonnaise, hot chili sauce, chili sauce, dill, salt, pepper, hot pepper sauce and Worcestershire sauce. Mix well. Shape into 4 patties (mixture will be very soft and delicate). Refrigerate for 30 minutes to make the patties easier to handle, if desired.', 1),
-(4, 'Sausage Crescent Rolls', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(5, 'Baked Pancakes', 5, 'egg', 2, '30mins', '3 tablespoons butter', 'Preheat oven to 425 degrees F', 0),
-(6, 'Tuna and Chicken', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(7, 'Hazelnuts and Cranberries', 1, 'Sprout', 6, '50mins', '1 pound Brussels sprouts, trimmed and quartered', 'Preheat oven to 425 degrees F', 2),
-(8, 'lunchGarlic-Lemon Double Stuffed Chicken', 2, 'chicken', 8, '50mins', 'oil, for greasing pan', 'Preheat oven to 350 degrees F. Lightly coat a large, shallow baking dish with oil.', 1),
-(9, 'Warm Brussels Sprout Salad with Hazelnuts and Cranberries', 2, 'Sprout', 6, '50mins', '1 pound Brussels sprouts, trimmed and quartered', 'Preheat oven to 425 degrees F', 0),
-(10, 'Tasty Tuna Burgers', 3, 'tuna', 4, '30mins', '1 can tuna, drained', 'Combine tuna, egg, bread crumbs, onion, celery, red bell pepper, mayonnaise, hot chili sauce, chili sauce, dill, salt, pepper, hot pepper sauce and Worcestershire sauce. Mix well. Shape into 4 patties (mixture will be very soft and delicate). Refrigerate for 30 minutes to make the patties easier to handle, if desired.', 0),
-(11, 'Sausage Crescent Rolls', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(12, 'Baked Pancakes', 5, 'egg', 2, '30mins', '3 tablespoons butter', 'Preheat oven to 425 degrees F', 0),
-(13, 'Tuna and Chicken', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(15, 'Warm Brussels Sprout Salad with Hazelnuts and Cranberries', 2, 'Sprout', 6, '50mins', '1 pound Brussels sprouts, trimmed and quartered', 'Preheat oven to 425 degrees F', 0),
-(17, 'Sausage Crescent Rolls', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(18, 'Baked Pancakes', 5, 'egg', 2, '30mins', '3 tablespoons butter', 'Preheat oven to 425 degrees F', 0),
-(19, 'Tuna and Chicken', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(21, 'Warm Brussels Sprout Salad with Hazelnuts and Cranberries', 2, 'Sprout', 6, '50mins', '1 pound Brussels sprouts, trimmed and quartered', 'Preheat oven to 425 degrees F', 0),
-(22, 'Tasty Tuna Burgers', 3, 'tuna', 4, '30mins', '1 can tuna, drained', 'Combine tuna, egg, bread crumbs, onion, celery, red bell pepper, mayonnaise, hot chili sauce, chili sauce, dill, salt, pepper, hot pepper sauce and Worcestershire sauce. Mix well. Shape into 4 patties (mixture will be very soft and delicate). Refrigerate for 30 minutes to make the patties easier to handle, if desired.', 0),
-(23, 'Sausage Crescent Rolls', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(25, 'Tuna and Chicken', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(26, 'Hazelnuts and Cranberries', 1, 'Sprout', 6, '50mins', '1 pound Brussels sprouts, trimmed and quartered', 'Preheat oven to 425 degrees F', 0),
-(27, 'Warm Brussels Sprout Salad with Hazelnuts and Cranberries', 2, 'Sprout', 6, '50mins', '1 pound Brussels sprouts, trimmed and quartered', 'Preheat oven to 425 degrees F', 0),
-(28, 'Tasty Tuna Burgers', 3, 'tuna', 4, '30mins', '1 can tuna, drained', 'Combine tuna, egg, bread crumbs, onion, celery, red bell pepper, mayonnaise, hot chili sauce, chili sauce, dill, salt, pepper, hot pepper sauce and Worcestershire sauce. Mix well. Shape into 4 patties (mixture will be very soft and delicate). Refrigerate for 30 minutes to make the patties easier to handle, if desired.', 0),
-(29, 'Sausage Crescent Rolls', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(30, 'Baked Pancakes', 5, 'egg', 2, '30mins', '3 tablespoons butter', 'Preheat oven to 425 degrees F', 0),
-(31, 'Tuna and Chicken', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(33, 'Warm Brussels Sprout Salad with Hazelnuts and Cranberries', 2, 'Sprout', 6, '50mins', '1 pound Brussels sprouts, trimmed and quartered', 'Preheat oven to 425 degrees F', 0),
-(34, 'Tasty Tuna Burgers', 3, 'tuna', 4, '30mins', '1 can tuna, drained', 'Combine tuna, egg, bread crumbs, onion, celery, red bell pepper, mayonnaise, hot chili sauce, chili sauce, dill, salt, pepper, hot pepper sauce and Worcestershire sauce. Mix well. Shape into 4 patties (mixture will be very soft and delicate). Refrigerate for 30 minutes to make the patties easier to handle, if desired.', 0),
-(35, 'Sausage Crescent Rolls', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(36, 'Baked Pancakes', 5, 'egg', 2, '30mins', '3 tablespoons butter', 'Preheat oven to 425 degrees F', 0),
-(37, 'Tuna and Chicken', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(39, 'Garlic-Lemon Double Stuffed Chicken', 1, 'chicken', 8, '50mins', 'oil, for greasing pan', 'Preheat oven to 350 degrees F. Lightly coat a large, shallow baking dish with oil.', 0),
-(40, 'Warm Brussels Sprout Salad with Hazelnuts and Cranberries', 2, 'Sprout', 6, '50mins', '1 pound Brussels sprouts, trimmed and quartered', 'Preheat oven to 425 degrees F', 0),
-(41, 'Tasty Tuna Burgers', 3, 'tuna', 4, '30mins', '1 can tuna, drained', 'Combine tuna, egg, bread crumbs, onion, celery, red bell pepper, mayonnaise, hot chili sauce, chili sauce, dill, salt, pepper, hot pepper sauce and Worcestershire sauce. Mix well. Shape into 4 patties (mixture will be very soft and delicate). Refrigerate for 30 minutes to make the patties easier to handle, if desired.', 0),
-(42, 'Sausage Crescent Rolls', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(43, 'Baked Pancakes', 5, 'egg', 2, '30mins', '3 tablespoons butter', 'Preheat oven to 425 degrees F', 0),
-(44, 'Tuna and Chicken', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(46, 'Garlic-Lemon Double Stuffed Chicken', 1, 'chicken', 8, '50mins', 'oil, for greasing pan', 'Preheat oven to 350 degrees F. Lightly coat a large, shallow baking dish with oil.', 0),
-(47, 'Warm Brussels Sprout Salad with Hazelnuts and Cranberries', 2, 'Sprout', 6, '50mins', '1 pound Brussels sprouts, trimmed and quartered', 'Preheat oven to 425 degrees F', 0),
-(48, 'Tasty Tuna Burgers', 3, 'tuna', 4, '30mins', '1 can tuna, drained', 'Combine tuna, egg, bread crumbs, onion, celery, red bell pepper, mayonnaise, hot chili sauce, chili sauce, dill, salt, pepper, hot pepper sauce and Worcestershire sauce. Mix well. Shape into 4 patties (mixture will be very soft and delicate). Refrigerate for 30 minutes to make the patties easier to handle, if desired.', 0),
-(49, 'Sausage Crescent Rolls', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(50, 'Baked Pancakes', 5, 'egg', 2, '30mins', '3 tablespoons butter', 'Preheat oven to 425 degrees F', 0),
-(51, 'Tuna and Chicken', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(53, 'Warm Brussels Sprout Salad with Hazelnuts and Cranberries', 2, 'Sprout', 6, '50mins', '1 pound Brussels sprouts, trimmed and quartered', 'Preheat oven to 425 degrees F', 0),
-(54, 'Tasty Tuna Burgers', 3, 'tuna', 4, '30mins', '1 can tuna, drained', 'Combine tuna, egg, bread crumbs, onion, celery, red bell pepper, mayonnaise, hot chili sauce, chili sauce, dill, salt, pepper, hot pepper sauce and Worcestershire sauce. Mix well. Shape into 4 patties (mixture will be very soft and delicate). Refrigerate for 30 minutes to make the patties easier to handle, if desired.', 0),
-(55, 'Sausage Crescent Rolls', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(56, 'Baked Pancakes', 5, 'egg', 2, '30mins', '3 tablespoons butter', 'Preheat oven to 425 degrees F', 0),
-(57, 'Tuna and Chicken', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(59, 'Warm Brussels Sprout Salad with Hazelnuts and Cranberries', 2, 'Sprout', 6, '50mins', '1 pound Brussels sprouts, trimmed and quartered', 'Preheat oven to 425 degrees F', 0),
-(63, 'Tuna and Chicken', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(65, 'Warm Brussels Sprout Salad with Hazelnuts and Cranberries', 2, 'Sprout', 6, '50mins', '1 pound Brussels sprouts, trimmed and quartered', 'Preheat oven to 425 degrees F', 0),
-(71, 'Warm Brussels Sprout Salad with Hazelnuts and Cranberries', 2, 'Sprout', 6, '50mins', '1 pound Brussels sprouts, trimmed and quartered', 'Preheat oven to 425 degrees F', 0),
-(73, 'Sausage Crescent Rolls', 4, 'Sausage', 20, '50mins', '1 pound fresh, ground spicy pork sausage', 'Preheat oven to 350 degrees F', 0),
-(77, 'sdf', 1, 'asdf', 0, 'sdf', 'sdf', 'sd', 1),
-(78, 'recipe name', 1, 'ingred', 8, '20min', 'whywhywhyingredients blah', '1.step\r\n2.step\r\n3.step', NULL),
-(79, 'mylunch_yummy', 2, 'salmon', 1, '5min', 'many', 'simple', NULL),
-(80, 'name for lunch', 2, 'argula', 2, '15mins', 'argula, baby spinach, pecan, cheese, balsamic vinegar', '1.rinse them\r\n2.mix them\r\n3. sauce with balsamic', NULL),
-(81, 'test0412', 5, 'key', 3, '30', 'ddd', 'sssssimple', NULL),
-(82, 'dinner test0412', 4, 'beef', 7, '1.5 hours', 'beef, anchovi, garlic, onion, herbs, salt', '1.step1\r\n2.step2\r\n3. step3', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `top_recipes`
---
-
-CREATE TABLE IF NOT EXISTS `top_recipes` (
-  `dish_id` int(10) NOT NULL,
-  `display_yes_no` varchar(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `top_recipes`
---
-
-INSERT INTO `top_recipes` (`dish_id`, `display_yes_no`) VALUES
-(4, 'N'),
-(3, 'N');
+INSERT INTO `housing` (`id`, `title`, `address`, `name`, `tel`, `email`, `googlemap`, `occupancy_date`, `status`, `img`, `description`) VALUES
+(1, 'Humber College walking distance 5-10 min. ROOM/ & Bachlor Apt. Avilable.(416-744-8058.) FURNISHED.', ' 261 John Garland Blvd. Etobicoke, Ontario', 'Dell S', '416-744-8058', 'dell_s@gmail.com', NULL, '2015-06-14', '1', NULL, 'Call:-> Dell. (416) 744-8058 or Email: delruba@gmail.com \r\n*2, Lrg rooms available on main floor. (Rent from $500.& up/ + 1 Bachlor.Apt.$700.) \r\n* Free-> WiFi Internet & Utilities Includ.+ Furnished Rm.Chair/Table/Desk/Bed/Bookshelf/Cupboard Inclued.\r\n* Own washrooms, Large kitchen/. Refrigerators/Toster/MicrowaveOven/Stove & Washer/Dryer.\r\n* Lrg new Windows,Very bright home. \r\n * Home is perfectly cared by owner and keep clean home by cleaner.\r\n-> 5/10 min WALK to Humber College/Guelph University and groceries.\r\n-> 24 hour TTC bus stop at door (Wilson 96)\r\n-> NO smoking/Parties/Pets/Drugs.& No over night Visitors\r\n-> Certified by Toronto Fire Department. * (Excellent home for living & studying for Students)'),
+(2, 'Furnished master bedroom upstairs in a student house with internet available from July 1st, 2015 ', '101 Mare Crescent Etobicoke,Ontario', 'Asit Basu', '416-675-2662 ', 'asit@gmail.com', NULL, '2015-06-18', '1', NULL, 'One very bright large bedroom with 2 beds, desk and chair available for clean, quiet and serious students – located 5 minutes away from the college and minute away from public transit, across from Woodbine Mall which has big departmental stores with food court and Fortino''s (big chain grocery store). This house has 1 full kitchen, living and dining area, 1.5 bathrooms, laundry, Hi-speed internet. Minute away from free shuttle bus to the college. Walkout to deck and backyard, overlooking Humber Arboretum and ravine. This room has large walk-in closet with large window. Current students are very mature and kept the house very clean. They are very quiet and do not invite people over the weekend. No smoking, no party, no pets and absolutely no overnight guests due to security reasons. Rent will be $700 per month for a single student and $400 per month each for two students. Parking will be extra. Last month deposit required.'),
+(3, 'Walking Distance to Humber College Executive Town house 5 bedrooms with 4 bedroom available', 'Queen''s plate drive Etobicoke, Ontario', 'Mariusz Starosta', '657-098-2343', 'mariusz@gmai.com', NULL, '2015-06-30', '1', NULL, '5 bedroom 2000 square feet executive townhouse, Extra clean lovely home,designed for comfortable student living.This home combines function with flair in a spacious and graciously designed home.This townhome features the following, 3.5 baths/large eat-in kitchen/premium appliances/window coverings/laundry room on 2 nd floor w/washer/dryer,central vacuum system/central heat/air conditioning/2 nd private entrance at rear/patio set in a private back yard/a few pcs of furniture on main floor \r\nsuperbly maintained by landlord. Must be seen to be appreciated. '),
+(4, '6 Rooms Available in Student Rental House - 1 min walk to Humber College ', '32 Woodsview', 'Gurdev Mahl', '416-786-9740', 'gurdev@gmail.com', NULL, '2015-06-19', '1', NULL, '6 Bedrooms Available in Student Rental House. 3 bedrooms upstairs, 1 on main floor, 2 in basement.\r\n\r\nRent ranges $375 - $550/month - available June 1st 2015\r\n\r\n1 minute walk to Humber College. Close to all major bus routes. Call Gurdev @ 416-786-9740 for more info.'),
+(5, 'HOME BACKING OUT TO HUMBER COLLEGE AVAILABLE MAY 1, 2015. 1 MIN WALK TO CAMPUS. LIKE LIVING ON RES ', 'Woodsview Avenue Etobicoke, Ontario', 'Harry Harry', '416-816-2041', 'harry@humber.ca', NULL, '2015-06-28', '1', NULL, 'Whole 4+2 bedroom house available from May 1, 2015 - located less than 1 minute walk to campus. Like living on res.\r\nGroups of students are preferred.\r\n\r\nClean and Spacious House with covered deck in the backyard. The backyard is on Humber College and is right beside the bus stop and the crossing to go to Humber College.\r\n\r\n6 Bedrooms - 4 upstairs and 2 downstairs\r\n3 Washrooms (one on each floor)\r\nFamily Size Kitchen with fridge, stove, oven\r\nEntertainers'' backyard with covered deck\r\nLess than 1 minute WALK to Humber College\r\n\r\nUnlimited Internet, Electricity, Gas, Water, Garbage Removal and Appliances are included.\r\n\r\nPlease email or call 416-816-2041 to arrange a viewing before it is taken.\r\n\r\nOnly responsible group of students who know and trust each other already, currently living together or are wanting to live together like a family. We are renting the whole house, not individual rooms. we charge the full rent and how to split is tenants'' decision, above illustration is for comparison purposes only.\r\n\r\nTo view and rent this great house with awesome location, please email, text or call 416-816-2041.');
 
 -- --------------------------------------------------------
 
@@ -172,22 +79,10 @@ INSERT INTO `users` (`userId`, `userName`, `password`) VALUES
 --
 
 --
--- Indexes for table `categories`
+-- Indexes for table `housing`
 --
-ALTER TABLE `categories`
- ADD PRIMARY KEY (`cat_id`);
-
---
--- Indexes for table `recipes`
---
-ALTER TABLE `recipes`
- ADD PRIMARY KEY (`dish_id`), ADD KEY `dish_cat` (`dish_cat`);
-
---
--- Indexes for table `top_recipes`
---
-ALTER TABLE `top_recipes`
- ADD KEY `dish_id` (`dish_id`);
+ALTER TABLE `housing`
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -200,25 +95,10 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT for table `housing`
 --
-ALTER TABLE `categories`
-MODIFY `cat_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `recipes`
---
-ALTER TABLE `recipes`
-MODIFY `dish_id` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=83;
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `top_recipes`
---
-ALTER TABLE `top_recipes`
-ADD CONSTRAINT `top_recipes_ibfk_1` FOREIGN KEY (`dish_id`) REFERENCES `recipes` (`dish_id`) ON DELETE CASCADE;
-
+ALTER TABLE `housing`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
