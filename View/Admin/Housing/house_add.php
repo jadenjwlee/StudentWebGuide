@@ -3,16 +3,6 @@
     <form action="index.php" method="post" id="add_house_form">
         <input type="hidden" name="action" value="add_house" />
 
-        <label>Category:</label>
-        <select name="category_id">
-        <?php foreach ($categories as $category) : ?>
-            <option value="<?php echo $category->getID(); ?>">
-                <?php echo $category->getName(); ?>
-            </option>
-        <?php endforeach; ?>
-        </select>
-        <br />
-
         <label>Title:</label>
         <input type="input" name="title" />
         <br />

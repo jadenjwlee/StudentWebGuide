@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/StudentWebGuide/View/Public/Housing/housing.php</file>
-            <file>file:/C:/xampp/htdocs/StudentWebGuide/View/Admin/Admin_page/admin.php</file>
-            <file>file:/C:/xampp/htdocs/StudentWebGuide/View/Admin/Housing/housing_list.php</file>
+            <file>file:/C:/xampp/htdocs/StudentWebGuide/school_guide.sql</file>
+            <file>file:/C:/xampp/htdocs/StudentWebGuide/View/Admin/Housing/index.php</file>
+            <file>file:/C:/xampp/htdocs/StudentWebGuide/View/Admin/Housing/house_add.php</file>
+            <file>file:/C:/xampp/htdocs/StudentWebGuide/View/Admin/Housing/house_list.php</file>
         </group>
     </open-files>
 </project-private>

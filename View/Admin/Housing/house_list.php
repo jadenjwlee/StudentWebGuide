@@ -19,6 +19,8 @@ echo '<table class="table" border=1>';
     <th>Address</th>
     <th>Name</th>
     <th>Email</th>
+    <th>Edit</th>
+    <th>Delete</th>    
 </tr>
 
 <?php
@@ -26,7 +28,11 @@ echo '<table class="table" border=1>';
 foreach ($houses as $house) :
     echo "<tr>";
     echo "<td>";
+?>
+    <a href="?action=show_detail_form&id=<?php echo $house->getId() ?>" >
+<?php
     echo substr($house->getTitle(),0,30);
+    echo "</a>";
     echo "</td>";
     echo "<td>";
     echo substr($house->getAddress(),0,30);
@@ -37,8 +43,27 @@ foreach ($houses as $house) :
     echo "<td>";
     echo $house->getEmail();
     echo "</td>";
+?>
+    <td><form action="." method="post"
+                          id="edit_house_form">
+                    <input type="hidden" name="action"
+                           value="show_edit_form" />
+                    <input type="hidden" name="id"
+                           value="<?php echo $house->getId(); ?>" />
+                    <input type="submit" value="Edit" />
+    </form></td>
+    <td><form action="." method="post"
+                          id="delete_house_form">
+                    <input type="hidden" name="action"
+                           value="delete_house" />
+                    <input type="hidden" name="id"
+                           value="<?php echo $house->getId(); ?>" />
+                    <input type="submit" value="Delete" />
+    </form></td>
+<?php
     echo "</tr>";
 endforeach;
 echo "</table>";
 
 ?>
+<p><a href="?action=show_add_form">Add House</a></p>
