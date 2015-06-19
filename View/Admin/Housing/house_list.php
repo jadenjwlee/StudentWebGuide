@@ -5,7 +5,8 @@
 <br /><br />                
 <form action="." method="GET">
 <b>Date:</b>
-<input type="date" id="event_date" name="$occupancy_date" size="20" />
+<input type="date" id="event_date" name="occupancy_date" size="20" />
+<input type="text" id="address" name="address" size="20" />
 <input type="submit" value="Submit" name="submit"></p>
 </form>
 

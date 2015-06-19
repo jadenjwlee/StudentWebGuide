@@ -1,15 +1,22 @@
 <?php
 class HouseDB {
 
-    public static function getHousing($condition) {
+    public static function getHousing($occupancy_date, $address) {
         $db = Database::getDB();
         
-        if( $condition != "" ){
-            $query = "SELECT * FROM housing where DATE_FORMAT(occupancy_date, '%m/%d/%Y') = '$condition' ";
+        if( $occupancy_date != "" ){
+            $query = "SELECT * FROM housing where ( (DATE_FORMAT(occupancy_date, '%m/%d/%Y') = '$occupancy_date' ) or (DATE_FORMAT(occupancy_date, '%Y-%m-%d') = '$occupancy_date' ))";
+            if( $address != "" ){
+                $query = "SELECT * FROM housing where ( (DATE_FORMAT(occupancy_date, '%m/%d/%Y') = '$occupancy_date' ) or (DATE_FORMAT(occupancy_date, '%Y-%m-%d') = '$occupancy_date' )) AND address like '%$address%' ";
+            }
         }else{
-            $query = "SELECT * FROM housing";
+            if( $address != "" ){
+                $query = "SELECT * FROM housing where address like '%$address%' ";
+            }else{
+                $query = "SELECT * FROM housing";
+            }
         }
-        
+
         $result = $db->query($query);
         $houses = array();
 

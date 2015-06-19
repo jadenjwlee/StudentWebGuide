@@ -1,6 +1,6 @@
 <div id="main">
     <h1>Add House</h1>
-    <form action="index.php" method="post" id="add_house_form">
+    <form action="index.php" method="post" id="add_house_form" enctype="multipart/form-data" >
         <input type="hidden" name="action" value="add_house" />
 
         <label>Title:</label>
@@ -35,6 +35,10 @@
         <input type="input" name="status" />
         <br />
 
+        <label>File::</label>
+        <input type="file" name="image"  id="fileToUpload" />
+        <br />
+
         <label>img:</label>
         <input type="input" name="img" />
         <br />
@@ -46,6 +50,7 @@
         <label>&nbsp;</label>
         <input type="submit" value="Add House" />
         <br />
+        
     </form>
     <p><a href="index.php?action=list_houses">View House List</a></p>
 

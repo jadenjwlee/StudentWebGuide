@@ -1,6 +1,6 @@
 <div id="main">
     <h1>Add House</h1>
-    <form action="index.php" method="post" id="edit_house">
+    <form action="index.php" method="post" id="edit_house" enctype="multipart/form-data" >
         <input type="hidden" name="action" value="edit_house" />
         
         <input type="hidden" name="id" value="<?php echo $house->getId(); ?>" />
@@ -37,8 +37,13 @@
         <input type="input" name="status"  value="<?php echo $house->getStatus(); ?>" />
         <br />
 
+        <label>File::</label>
+        <input type="file" name="image"  id="fileToUpload" />
+        <br />        
+
         <label>img:</label>
         <input type="input" name="img"  value="<?php echo $house->getImg(); ?>" />
+        <input type="hidden" name="previmg"  value="<?php echo $house->getImg(); ?>" />
         <br />
         
         <label>Description:</label>
