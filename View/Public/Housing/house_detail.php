@@ -1,8 +1,15 @@
 <div id="main">
-    <h1>House Detail</h1>
+    <h1>OFF-CAMPUS HOUSING</h1>
+    <br /><br />                
 
+    <ul>
+    <li style="display:inline; float:left; margin-right:8px;">
         <iframe class="map" width="325" height="250" frameborder="1" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.ca/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=<?php echo $house->getAddress(); ?>&amp;aq=&amp;sspn=0.111915,0.295601&amp;ie=UTF8&amp;hq=&amp;hnear=<?php echo $house->getAddress(); ?>&amp;t=m&amp;z=12&amp;output=embed" w></iframe>
-    <br />
+    </li>
+    <li style="display:inline; float:top; margin-right:8px;">
+        <img src="../../../Upload/<?php echo $house->getImg(); ?>.jpg" width="325" height="250" >
+    </li>
+    <br /><br />
     
         <label>Title:</label>
         <?php echo $house->getTitle(); ?>
@@ -41,7 +48,9 @@
         <br />
         
         <label>Description:</label>
+        <pre>
         <?php echo $house->getDescription(); ?>
+        </pre>
         <br />
         
     <p><a href="index.php?action=list_houses">View House List</a></p>

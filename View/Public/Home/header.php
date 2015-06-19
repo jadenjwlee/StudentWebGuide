@@ -9,6 +9,12 @@
 <![endif]-->
 <link href="../../style/main.css" rel="stylesheet" type="text/css" />
 <link href="../../style/reset.css" rel="stylesheet" type="text/css" />
+
+    <link href="../../style/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../../JS/bootstrap.min.js"></script>
+
 </head>
 
 <body>

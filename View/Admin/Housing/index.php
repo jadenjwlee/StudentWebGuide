@@ -1,3 +1,4 @@
+<?php include "../Home/header.php";  ?>  
 <?php
 require("../../../Model/database.php");
 require("../../../Model/housing.php");
@@ -241,3 +242,5 @@ if ($action == 'list_houses') {
 }
 
 ?>
+
+<?php include "../Home/footer.php";  ?>  

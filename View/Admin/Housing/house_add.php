@@ -3,53 +3,58 @@
     <form action="index.php" method="post" id="add_house_form" enctype="multipart/form-data" >
         <input type="hidden" name="action" value="add_house" />
 
-        <label>Title:</label>
-        <input type="input" name="title" />
-        <br />
-
-        <label>Address:</label>
-        <input type="input" name="address" />
-        <br />
-
-        <label>Name:</label>
-        <input type="input" name="name" />
-        <br />
-
-        <label>Tel:</label>
-        <input type="input" name="tel" />
-        <br />
-
-        <label>Email:</label>
-        <input type="input" name="email" />
-        <br />
-
-        <label>Google Map:</label>
-        <input type="input" name="googlemap" />
-        <br />
+    <table>
+    <tr>
+        <th>Title:</th>
+        <td><input type="input" name="title" /></td>
+    </tr>
+    <tr>				
+        <th>Address:</th>
+    	<td><input type="input" name="address" /></td>
+    </tr>
+    <tr>				
+        <th>Name:</th>
+        <td><input type="input" name="name" /></td>
+    </tr>
+    <tr>				
+        <th>Tel:</th>
+        <td><input type="input" name="tel" /></td>
+    </tr>
+    <tr>				
+        <th>Email:</th>
+        <td><input type="input" name="email" /></td>
+    </tr>
+    <tr>				
+        <th>Google Map:</th>
+        <td><input type="input" name="googlemap" /></td>
+    </tr>
+    <tr>				
+        <th>Occupancy Date:</th>
+        <td><input type="input" name="occupancy_date" /></td>
+    </tr>
+    <tr>				
+        <th>Status:</th>
+        <td><input type="input" name="status" /></td>
+    </tr>
+    <tr>				
+        <th>File::</th>
+        <td><input type="file" name="image"  id="fileToUpload" /></td>
+    </tr>
+    <tr>				
+        <th>img:</th>
+        <td><input type="input" name="img" /></td>
+    </tr>
+    <tr>				
+        <th>Description:</th>
+        <td><input type="input" name="description" /></td>
+    </tr>
+    </table>				
+    
+    <br />
         
-        <label>Occupancy Date:</label>
-        <input type="input" name="occupancy_date" />
-        <br />
-
-        <label>Status:</label>
-        <input type="input" name="status" />
-        <br />
-
-        <label>File::</label>
-        <input type="file" name="image"  id="fileToUpload" />
-        <br />
-
-        <label>img:</label>
-        <input type="input" name="img" />
-        <br />
-        
-        <label>Description:</label>
-        <input type="input" name="description" />
-        <br />
-        
-        <label>&nbsp;</label>
-        <input type="submit" value="Add House" />
-        <br />
+    <label>&nbsp;</label>
+    <input type="submit" value="Add House" />
+    <br /><br />
         
     </form>
     <p><a href="index.php?action=list_houses">View House List</a></p>
