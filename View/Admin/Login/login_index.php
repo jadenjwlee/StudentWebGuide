@@ -38,15 +38,15 @@ if (isset($_SESSION['login_user'])) {
     
     <h2><span class="fontawesome-lock"></span>User Login</h2>
     
-    <form action="" method="Post">
+    <form action="" method="POST">
         <fieldset name="Log_in">      
 
             <p><label for="username">UserName</label></p>
-                <p><input type="username" id="username" value="username" onBlur="if(this.value=='')this.value='username'" onFocus="if(this.value=='username')
+                <p><input type="username" id="username" name="username" value="username" onBlur="if(this.value=='')this.value='username'" onFocus="if(this.value=='username')
                     this.value=''"></p> 
 
                 <p><label for="password">Password</label></p>
-                <p><input type="password" id="password" value="password" onBlur="if(this.value=='')this.value='password'" onFocus="if(this.value=='password')
+                <p><input type="password" id="password" name="password" value="password" onBlur="if(this.value=='')this.value='password'" onFocus="if(this.value=='password')
                     this.value=''"></p>
         </fieldset>
 

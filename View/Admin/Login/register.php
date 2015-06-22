@@ -66,7 +66,7 @@ if (isset($_POST['submit'])) {
 <!--            <p><a href="#" class="btn btn-primary" role="button">Register</a></p>-->
             <br/>
             <input type="submit" name="submit" value="Register"/><br/><br/>
-            <p><a href="../../index.php">Return</a></p>
+            <p><a href="../../../index.php">Return</a></p>
 
         </fieldset>
     </form>

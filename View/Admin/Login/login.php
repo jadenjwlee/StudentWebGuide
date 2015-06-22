@@ -12,11 +12,10 @@ session_start(); //Starting Session(Start new or resume existing session)
 $error=''; //Variable To Store Error Mesage
 
 if(isset($_POST['submit'])){
-    if(empty($_POST['username']) || empty($_POST['password'])){
+    if(!isset($_POST['username']) || !isset($_POST['password'])){
         $error = "Username or Password is invalid";
     } else //if username and password inputs are not null, do the following
             {
-        
              //Image Authenticaion added
              //firstly check if the number submitted is correct
              $number = $_POST['imgNumber'];
@@ -80,7 +79,7 @@ if(isset($_POST['submit'])){
                         $_SESSION['timeout']= time(); //taking now logged in time
                         //$_SESSION['expire'] = $_SESSION['start']+10;  //10 seconds timeout
                       
-                        header("location: ../../Public/Home/home.php");
+                        header("location: index.php");
                       //header("location: profile.php") ; // Redirecting to other page
                       exit;
                    }
