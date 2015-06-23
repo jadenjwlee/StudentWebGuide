@@ -1,9 +1,9 @@
 <?php 
 
 	class Database{
-		private static $dsn = 'mysql:host=localhost;dbname=StudentWebGuide';
-		private static $username = 'root';
-		private static $password = 'FANder2008';
+		private static $dsn = 'mysql:host=my03.winhost.com;dbname=mysql_90922_student';
+		private static $username = 'studentwebguide';
+		private static $password = 'student';
 
 		//reference to db connection
 		private static $dbCon;

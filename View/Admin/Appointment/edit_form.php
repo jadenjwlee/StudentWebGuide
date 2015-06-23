@@ -1,15 +1,14 @@
-<?php 
+<?php
+
+	$student_id = $_POST['student_id'];
 	
-	//Get database connection
+	//Get result from database useing id
 	require_once('../../../Controller/DatabaseConn.php');
 	$db = Database::getDB();
+	$query = "SELECT * FROM appointment WHERE id = '$student_id'";
 
-	//Get appointment table
-	$query = 'SELECT * FROM appointment';
-	$result = $db -> query($query);
-
+	$detail = $db -> query($query);
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -76,35 +75,41 @@
                     <strong>Appointment for International Center</strong>
                 </div>
                 <div class="panel-body">
-                	<div class="row col-md-6 col-md-offset-2 custyle">
-    					<table id="app_table" class="table table-striped custab">
-    						<thead>
-    							<h3 style="margin-left: 200px; color: red;">Appointment table</h3>
-        						<tr>
-        							<th>Student Number</th>
-            						<th>Name</th>
-            						<th>Email</th>
-            						<th>Time</th>
-            						<th>Instructors</th>
-            						<th class="text-center">Action</th>
-        						</tr>
-    						</thead>
-    							<?php foreach($result as $results) : ?>
-					            <tr>
-					            	<td><?php echo $results['id']; ?></td>
-					                <td><?php echo $results['name']; ?></td>
-					                <td><?php echo $results['email']; ?></td>
-					                <td><?php echo $results['time']; ?></td>
-					                <td><?php echo $results['instructor']; ?></td>
-					                <td class="text-center">
-					                	<form action="edit_form.php" method="post">
-					                		<input type="hidden" name="student_id" value="<?php echo $results['id']; ?>">
-					                		<input type="submit" class='btn btn-info btn-xs' value="Assign Instructor" />
-					                	</form>
-					            </tr>
-					        	<?php endforeach; ?>
-					    </table>
-    				</div>
+                	<form action="update.php" method="post">
+                	<?php foreach($detail as $details) : ?>
+                	<input type="hidden" name="student_id" value="<?php echo $details['id']; ?>">
+                	<input type="hidden" name="email" value="<?php echo $details['email']; ?>">
+                    <div class="panel-body form-horizontal payment-form">
+	                    <div class="form-group">
+	                        <label for="id" class="col-sm-3 control-label">Student ID</label>
+	                        <label class="col-sm-3 control-label"><?php echo $details['id']; ?></label>
+	                    </div>
+	                    <div class="form-group">
+	                        <label for="name" class="col-sm-3 control-label">Name</label>
+	                        <label class="col-sm-3 control-label"><?php echo $details['name']; ?></label>
+	                    </div> 
+	                    <div class="form-group">
+	                        <label for="name" class="col-sm-3 control-label">Email</label>
+	                        <label class="col-sm-3 control-label"><?php echo $details['email']; ?></label>
+	                    </div>
+	                    <div class="form-group">
+	                        <label for="name" class="col-sm-3 control-label">Date</label>
+	                        <label class="col-sm-3 control-label"><?php echo $details['time']; ?></label>
+	                    </div> 
+	                    <div class="form-group">
+	                        <label for="instructor" class="col-sm-3 control-label">Instructor</label>
+	                        <div class="col-sm-9">
+	                            <input type="text" class="form-control" id="date" name="instructor">
+	                        </div>
+	                    </div>
+	                    <div class="form-group">
+                        	<div class="col-sm-12 text-right">
+                            	<input type="submit" class="btn btn-default preview-add-button" name="submit" value="Assign" />
+                        	</div>
+                    	</div>   
+	                </div>
+                	<?php endforeach; ?>
+                	</form>
                 </div>
             </div>
 		</div>
