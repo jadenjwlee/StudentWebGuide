@@ -25,18 +25,12 @@
                 <th>Email:</th>
                 <td><input type="input" name="email"  value="<?php echo $house->getEmail(); ?>" /></td>
             </tr>
-            <tr>
-                <th>Google Map:</th>
-                <td><input type="input" name="googlemap"  value="<?php echo $house->getGooglemap(); ?>" /></td>
-            </tr>
+            <input type="hidden" name="googlemap"  value="<?php echo $house->getGooglemap(); ?>" />
             <tr>  
                 <th>Occupancy Date:</th>
                 <td><input type="input" name="occupancy_date"  value="<?php echo $house->getOccupancyDate(); ?>" /></td>
             </tr>
-            <tr>
-                <th>Status:</th>
-                <td><input type="input" name="status"  value="<?php echo $house->getStatus(); ?>" /></td>
-            </tr>
+            <input type="hidden" name="status"  value="<?php echo $house->getStatus(); ?>" />
             <tr>
                 <th>File::</th>
                 <td><input type="file" name="image"  id="fileToUpload" /></td>

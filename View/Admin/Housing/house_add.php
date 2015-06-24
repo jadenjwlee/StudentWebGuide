@@ -24,18 +24,12 @@
         <th>Email:</th>
         <td><input type="input" name="email" /></td>
     </tr>
-    <tr>				
-        <th>Google Map:</th>
-        <td><input type="input" name="googlemap" /></td>
-    </tr>
+    <input type="hidden" name="googlemap" />
     <tr>				
         <th>Occupancy Date:</th>
         <td><input type="input" name="occupancy_date" /></td>
     </tr>
-    <tr>				
-        <th>Status:</th>
-        <td><input type="input" name="status" /></td>
-    </tr>
+    <input type="hidden" name="status" />
     <tr>				
         <th>File::</th>
         <td><input type="file" name="image"  id="fileToUpload" /></td>
