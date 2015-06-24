@@ -44,9 +44,14 @@
         <th>img:</th>
         <td><input type="input" name="img" /></td>
     </tr>
-    <tr>				
-        <th>Description:</th>
-        <td><input type="input" name="description" /></td>
+    <tr>
+        <th colspan="2">Description:</th>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <textarea class="ckeditor" cols="80" id="editor1" name="description" rows="10">
+            </textarea>
+        </td>
     </tr>
     </table>				
     

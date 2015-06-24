@@ -51,9 +51,12 @@
             </tr>
             <tr>
                 <td colspan="2">
-                    <textarea name="description"rows="4" cols="50"><?php echo $house->getDescription(); ?></textarea>
+                        <textarea class="ckeditor" cols="80" id="editor1" name="description" rows="10">
+                        <?php echo $house->getDescription(); ?>
+			</textarea>
                 </td>
             </tr>
+            
         </table>
 
         <br />
