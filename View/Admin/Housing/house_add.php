@@ -6,37 +6,37 @@
     <table>
     <tr>
         <th>Title:</th>
-        <td><input type="input" name="title" /></td>
+        <td><input type="input" name="title"  size="100" /></td>
     </tr>
     <tr>				
         <th>Address:</th>
-    	<td><input type="input" name="address" /></td>
+    	<td><input type="input" name="address"  size="100" /></td>
     </tr>
     <tr>				
         <th>Name:</th>
-        <td><input type="input" name="name" /></td>
+        <td><input type="input" name="name"  size="100" /></td>
     </tr>
     <tr>				
         <th>Tel:</th>
-        <td><input type="input" name="tel" /></td>
+        <td><input type="input" name="tel" size="100" /></td>
     </tr>
     <tr>				
         <th>Email:</th>
-        <td><input type="input" name="email" /></td>
+        <td><input type="input" name="email" size="100" /></td>
     </tr>
-    <input type="hidden" name="googlemap" />
+    <input type="hidden" name="googlemap" value="" />
     <tr>				
         <th>Occupancy Date:</th>
-        <td><input type="input" name="occupancy_date" /></td>
+        <td><input type="input" name="occupancy_date" size="100" /></td>
     </tr>
-    <input type="hidden" name="status" />
+    <input type="hidden" name="status" value=""/>
     <tr>				
         <th>File::</th>
-        <td><input type="file" name="image"  id="fileToUpload" /></td>
+        <td><input type="file" name="image"  id="fileToUpload" size="100" /></td>
     </tr>
     <tr>				
         <th>img:</th>
-        <td><input type="input" name="img" /></td>
+        <td><input type="input" name="img" size="100" /></td>
     </tr>
     <tr>
         <th colspan="2">Description:</th>

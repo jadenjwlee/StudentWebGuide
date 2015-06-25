@@ -31,16 +31,8 @@
         <?php echo $house->getEmail(); ?>
         <br />
 
-        <label>Google Map:</label>
-        <?php echo $house->getGooglemap(); ?>
-        <br />
-        
         <label>Occupancy Date:</label>
         <?php echo $house->getOccupancyDate(); ?>
-        <br />
-
-        <label>Status:</label>
-        <?php echo $house->getStatus(); ?>
         <br />
 
         <label>img:</label>
@@ -48,9 +40,14 @@
         <br />
         
         <label>Description:</label>
-        <pre>
-        <?php echo $house->getDescription(); ?>
-        </pre>
+        <table>
+            <tr>
+                <td width="700">
+                    <?php echo $house->getDescription(); ?>
+                </td>
+            </tr>
+        
+        </table>
         <br />
         
     <p><a href="index.php?action=list_houses">View House List</a></p>

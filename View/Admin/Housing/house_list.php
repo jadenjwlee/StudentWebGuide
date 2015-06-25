@@ -60,7 +60,7 @@ foreach ($houses as $house) :
                            value="delete_house" />
                     <input type="hidden" name="id"
                            value="<?php echo $house->getId(); ?>" />
-                    <input type="submit" value="Delete" />
+                    <input type="submit" value="Delete" onclick="return confirm('Are you sure to delete?')"/>
     </form></td>
 <?php
     echo "</tr>";
