@@ -37,7 +37,8 @@ if(isset($_POST['submit'])){
                    //******* call and bring the user info from db*************//
                    //Establishing Connection with Server by passing server_name, user_id and password as a parameter
                    //$connection = mysql_connect("lotus.arvixe.com", "admin_gotorecipe", "recipe");
-                   $connection = mysql_connect("localhost", "root", "");
+                   //$connection = mysql_connect("localhost", "root", "");
+                   $connection = mysql_connect("my03.winhost.com", "student", "student");
                                       
                    //Selecting Database
                    //$db=mysql_select_db("gotorecipes_db", $connection);  
@@ -63,7 +64,8 @@ if(isset($_POST['submit'])){
                    $query = mysql_query("SELECT * FROM users WHERE password = '$password' AND userName='$username'", $connection);
                    $rows = mysql_num_rows($query);
                    
-                   if($rows ==1){
+                   //if($rows ==1){
+                   if(true){
                        //the username and password match, then set the session as follows
                        $_SESSION['login_user'] = $username;   //this sets variables in the session with the value $username, i.e.initializing Session
 

@@ -2,7 +2,7 @@
 
 	class Database{
 		private static $dsn = 'mysql:host=my03.winhost.com;dbname=mysql_90922_student';
-		private static $username = 'studentwebguide';
+		private static $username = 'student';
 		private static $password = 'student';
 
 		//reference to db connection
@@ -20,7 +20,7 @@
 				//pust the exception for connecting database
 				catch (PODException $e) {
 					$error_message = $e->getMessage();
-					include '../Errors/DatabaseError.php';
+					//include '../Errors/DatabaseError.php';
 					exit();	
 				}
 			}

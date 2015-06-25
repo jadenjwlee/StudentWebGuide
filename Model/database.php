@@ -3,9 +3,13 @@
 class Database{
     //Database class to create a database connection object(Php Data Object)    
     
-    private static $dsn = 'mysql:host=localhost;dbname=school_guide';
-    private static $username = 'root';
-    private static $password = '';
+//    private static $dsn = 'mysql:host=localhost;dbname=school_guide';
+//    private static $username = 'root';
+//    private static $password = '';
+    
+    private static $dsn = 'mysql:host=my03.winhost.com;dbname=mysql_90922_student';
+    private static $username = 'student';
+    private static $password = 'student';
 
     //reference to db connection
     private static $dbCon;
